@@ -1,0 +1,117 @@
+/* styles.css */
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.light-theme {
+    --background-color: #f9f9f9;
+    --container-background: #fff;
+    --text-color: #333;
+    --label-color: #555;
+    --input-border: 1px solid #ccc;
+    --input-background: #fff;
+    --input-focus-border: #3498db;
+    --input-focus-shadow: rgba(52, 152, 219, 0.5);
+    --button-background: #4caf50;
+    --button-text: #fff;
+    --toggle-background: #3498db;
+    --toggle-text: #fff;
+}
+
+.dark-theme {
+    --background-color: #333;
+    --container-background: #444;
+    --text-color: #fff;
+    --label-color: #bbb;
+    --input-border: 1px solid #555;
+    --input-background: #333;
+    --input-focus-border: #3498db;
+    --input-focus-shadow: rgba(52, 152, 219, 0.5);
+    --button-background: #4caf50;
+    --button-text: #fff;
+    --toggle-background: #3498db;
+    --toggle-text: #fff;
+}
+
+.login-container {
+    background-color: var(--container-background);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    width: 350px;
+    text-align: center;
+    margin: 20px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+h2 {
+    color: var(--text-color);
+    margin-bottom: 20px;
+}
+
+.input-field {
+    margin-bottom: 20px;
+    width: 100%;
+    box-sizing: border-box;
+    text-align: left;
+}
+
+label {
+    display: block;
+    font-size: 14px;
+    margin-bottom: 5px;
+    color: var(--label-color);
+}
+
+input {
+    width: 100%;
+    padding: 12px;
+    border: var(--input-border);
+    border-radius: 5px;
+    background-color: var(--input-background);
+    box-sizing: border-box;
+    transition: border-color 0.3s, box-shadow 0.3s, background-color 0.3s;
+    color: var(--text-color);
+}
+
+input:focus {
+    outline: none;
+    border-color: var(--input-focus-border);
+    box-shadow: 0 0 10px var(--input-focus-shadow);
+}
+
+.login-button, .signup-button {
+    background-color: var(--button-background);
+    color: var(--button-text);
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    font-size: 16px;
+}
+
+.toggle-button {
+    background-color: var(--toggle-background);
+    color: var(--toggle-text);
+    border: none;
+    padding: 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+/* Add media query for responsiveness */
+@media only screen and (max-width: 600px) {
+    .login-container {
+        width: 80%;
+    }
+}

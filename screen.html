@@ -1,23 +1,20 @@
+<!-- index.html -->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login and Sign Up Page</title>
+    <title>Login and Profile Page</title>
     <link rel="stylesheet" type="text/css" href="screen.css">
-
 </head>
-<body>
+<body class="light-theme">
     <div class="login-container">
         <h2 id="form-title">Login</h2>
-        <form id="login-form" action="#" method="post">
+        <form id="login-form" action="#" method="post" onsubmit="login(event)">
             <div class="input-field">
                 <label for="email">Email:</label>
                 <input type="email" id="email" name="email" required>
-            </div>
-            <div class="input-field">
-                <label for="phone">Phone Number:</label>
-                <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" placeholder="Enter 10-digit phone number" required>
             </div>
             <div class="input-field">
                 <label for="password">Password:</label>
@@ -32,10 +29,6 @@
                 <input type="email" id="new-email" name="new-email" required>
             </div>
             <div class="input-field">
-                <label for="new-phone">Phone Number:</label>
-                <input type="tel" id="new-phone" name="new-phone" pattern="[0-9]{10}" placeholder="Enter 10-digit phone number" required>
-            </div>
-            <div class="input-field">
                 <label for="new-password">Password:</label>
                 <input type="password" id="new-password" name="new-password" required>
             </div>
@@ -45,25 +38,20 @@
         <button id="toggle-button" class="toggle-button" onclick="toggleForm()">Switch to Sign Up</button>
     </div>
 
-    <script>
-        function toggleForm() {
-            var loginForm = document.getElementById("login-form");
-            var signupForm = document.getElementById("signup-form");
-            var formTitle = document.getElementById("form-title");
-            var toggleButton = document.getElementById("toggle-button");
+    <div id="profile-page" class="profile-container" style="display: none;">
+        <div class="profile-image">
+            <img src="profile.jpg" alt="Profile Image">
+        </div>
 
-            if (loginForm.style.display === "none") {
-                loginForm.style.display = "block";
-                signupForm.style.display = "none";
-                formTitle.innerHTML = "Login";
-                toggleButton.innerHTML = "Switch to Sign Up";
-            } else {
-                loginForm.style.display = "none";
-                signupForm.style.display = "block";
-                formTitle.innerHTML = "Sign Up";
-                toggleButton.innerHTML = "Switch to Login";
-            }
-        }
-    </script>
+        <div class="user-details">
+            <h2>User Name</h2>
+            <p>Date of Birth: January 1, 1990</p>
+            <p>Location: City, Country</p>
+        </div>
+
+        <button class="logout-button" onclick="logout()">Logout</button>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
